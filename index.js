@@ -37,6 +37,10 @@ unoconv.convert = function(file, outputFormat, options, callback) {
         args.push('-p' + options.port)
     }
 
+    if (options && options.charset) {
+        args.push('-i ' + options.charset)
+    }
+
     args.push(file);
 
     if (options && options.bin) {
